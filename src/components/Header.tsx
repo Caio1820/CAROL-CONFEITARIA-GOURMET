@@ -24,9 +24,11 @@ export const Header: React.FC<HeaderProps> = ({
             src={STORE_INFO.logoUrl}
             alt="Carol Cafeteria Gourmet"
             className="w-9 h-9 rounded-full object-cover ring-2 ring-[#C5A059]/40 group-hover:ring-[#8C593B] transition-all"
-            referrerPolicy="no-referrer"
             onError={(e) => {
-              (e.currentTarget as HTMLImageElement).style.display = 'none';
+              const target = e.currentTarget;
+              if (target.src !== STORE_INFO.logoExternalUrl) {
+                target.src = STORE_INFO.logoExternalUrl;
+              }
             }}
           />
           <div className="flex flex-col">

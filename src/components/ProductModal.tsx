@@ -27,6 +27,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
   );
   const [observation, setObservation] = useState('');
   const [added, setAdded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const basePrice = item.price;
   const currentPrice = selectedOption
@@ -62,12 +63,21 @@ export const ProductModal: React.FC<ProductModalProps> = ({
         <div className="overflow-y-auto flex-1 p-0">
           {/* Product Hero Image */}
           <div className="relative aspect-16/10 sm:aspect-16/9 bg-[#F0E6D8] overflow-hidden">
-            <img
-              src={item.imageUrl}
-              alt={item.name}
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-cover"
-            />
+            {imageError ? (
+              <div className="w-full h-full flex flex-col items-center justify-center bg-[#FAF4ED] text-[#8C593B] p-6 text-center">
+                <span className="text-4xl mb-2">🍰</span>
+                <span className="font-serif font-bold text-base text-[#3A261D]">
+                  {item.name}
+                </span>
+              </div>
+            ) : (
+              <img
+                src={item.imageUrl}
+                alt={item.name}
+                className="w-full h-full object-cover"
+                onError={() => setImageError(true)}
+              />
+            )}
             {item.tag && (
               <div className="absolute bottom-3 left-3 bg-[#2C201A]/85 backdrop-blur-xs text-[#FAF7F2] px-3 py-1 rounded-md text-xs font-semibold">
                 {item.tag}

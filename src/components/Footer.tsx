@@ -14,7 +14,12 @@ export const Footer: React.FC<{ onOpenLocation: () => void }> = ({
             src={STORE_INFO.logoUrl}
             alt="Carol Cafeteria Gourmet"
             className="w-8 h-8 rounded-full object-cover ring-1 ring-[#8C593B]/40"
-            referrerPolicy="no-referrer"
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (target.src !== STORE_INFO.logoExternalUrl) {
+                target.src = STORE_INFO.logoExternalUrl;
+              }
+            }}
           />
           <span className="font-serif text-lg font-bold text-[#3A261D]">
             Carol Cafeteria Gourmet

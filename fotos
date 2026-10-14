@@ -1,3 +1,0 @@
-git add .
-git commit -m "feat: cria pasta public e adiciona imagens dos bolos"
-git push origin main

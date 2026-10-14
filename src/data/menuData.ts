@@ -1,5 +1,13 @@
 import { MenuItem } from '../types';
 
+// Direct ES imports ensure Vite bundles, resolves and serves images correctly in both dev and production
+import imgCakeRedVelvet from '../assets/images/cake_red_velvet_1791994460319.jpg';
+import imgCakeBelgianChocolate from '../assets/images/cake_belgian_chocolate_1791994578826.jpg';
+import imgPieBanoffee from '../assets/images/pie_banoffee_artisanal_1791994463618.jpg';
+import imgPieSavoryChicken from '../assets/images/pie_savory_chicken_1791994579911.jpg';
+import imgCoffeeCappuccino from '../assets/images/coffee_cappuccino_gourmet_1791994462535.jpg';
+import imgGiftKit from '../assets/images/gift_kit_gourmet_1791994463599.jpg';
+
 export const MENU_ITEMS: MenuItem[] = [
   // 1. Bolos Recheados & Confeitados
   {
@@ -9,7 +17,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 135.00,
     description: 'Massa aveludada vermelho rubi, recheio cremoso e generoso de cream cheese frosting original com toque de baunilha de Madagascar, finalizado com frutas vermelhas frescas.',
     servings: 'Aprox. 1.8kg (15 a 18 fatias)',
-    imageUrl: '/src/assets/images/cake_red_velvet_1791994460319.jpg',
+    imageUrl: imgCakeRedVelvet,
     featured: true,
     tag: 'Mais Pedido',
     leadTimeNotice: 'Encomenda: 24h a 48h de antecedência',
@@ -26,7 +34,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 140.00,
     description: 'Pão de ló úmido de cacau 100%, dupla camada de brigadeiro gourmet artesanal com chocolate belga Callebaut e cobertura com drip chocolate e brigadeiros enrolados.',
     servings: 'Aprox. 2.0kg (18 a 20 fatias)',
-    imageUrl: '/src/assets/images/cake_belgian_chocolate_1791994578826.jpg',
+    imageUrl: imgCakeBelgianChocolate,
     featured: true,
     tag: 'Especial da Casa',
     leadTimeNotice: 'Encomenda: 24h de antecedência',
@@ -43,7 +51,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 145.00,
     description: 'Massa branca amanteigada levíssima, recheio aveludado de Leite Ninho artesanal, generosa camada de Nutella pura e morangos frescos selecionados.',
     servings: 'Aprox. 2.0kg (18 a 20 fatias)',
-    imageUrl: '/src/assets/images/cake_red_velvet_1791994460319.jpg',
+    imageUrl: imgCakeRedVelvet,
     tag: 'Queridinho',
     leadTimeNotice: 'Encomenda: 24h a 48h de antecedência',
     options: [
@@ -58,10 +66,10 @@ export const MENU_ITEMS: MenuItem[] = [
     id: 'torta-banoffee',
     name: 'Torta Banoffee Artesanal',
     category: 'tortas',
-    price: 22.00, // Fatia como base ou inteira
+    price: 22.00,
     description: 'Base crocante amanteigada de biscoito, doce de leite artesanal cozido lentamente no ponto exato, bananas frescas fatiadas e chantilly fresco aromatizado polvilhado com cacau belga.',
     servings: 'Fatia generosa individual (ou opção inteira)',
-    imageUrl: '/src/assets/images/pie_banoffee_artisanal_1791994463618.jpg',
+    imageUrl: imgPieBanoffee,
     featured: true,
     tag: 'Sucesso Absoluto',
     leadTimeNotice: 'Fatia a pronta entrega | Inteira sob encomenda 24h',
@@ -77,7 +85,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 24.00,
     description: 'Massa podre artesanal que derrete na boca, recheio farto de peito de frango desfiado temperado com ervas finas da horta e legítimo Catupiry original.',
     servings: 'Fatia farta individual (ou opção inteira)',
-    imageUrl: '/src/assets/images/pie_savory_chicken_1791994579911.jpg',
+    imageUrl: imgPieSavoryChicken,
     featured: true,
     tag: 'Artesanal Salgada',
     leadTimeNotice: 'Fatia pronta entrega | Inteira sob encomenda 24h',
@@ -93,7 +101,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 22.00,
     description: 'Biscoitos Calipso na borda, creme aerado holandês à base de manteiga e leite condensado e cobertura espelhada de ganache de chocolate meio amargo.',
     servings: 'Fatia individual (ou inteira sob encomenda)',
-    imageUrl: '/src/assets/images/pie_banoffee_artisanal_1791994463618.jpg',
+    imageUrl: imgPieBanoffee,
     leadTimeNotice: 'Fatia a pronta entrega | Inteira sob encomenda 24h',
     options: [
       { name: 'Fatia Individual (Aprox. 200g)', priceDelta: 0 },
@@ -109,7 +117,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 15.00,
     description: 'Espresso duplo tirado na hora com grãos especiais 100% arábica, leite vaporizado com microespuma sedosa e finalização com cacau belga 100% e raspas de canela.',
     servings: 'Xícara 200ml',
-    imageUrl: '/src/assets/images/coffee_cappuccino_gourmet_1791994462535.jpg',
+    imageUrl: imgCoffeeCappuccino,
     featured: true,
     tag: 'Especial Barista',
     leadTimeNotice: 'Pronta entrega na cafeteria & Delivery expresso',
@@ -126,7 +134,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 17.50,
     description: 'Camadas perfeitas de leite vaporizado aromatizado com xarope artesanal de baunilha, dose de espresso arábica encorpado e calda densa de caramelo salgado tostado.',
     servings: 'Copo térmico/xícara 280ml',
-    imageUrl: '/src/assets/images/coffee_cappuccino_gourmet_1791994462535.jpg',
+    imageUrl: imgCoffeeCappuccino,
     tag: 'Doce & Equilibrado',
     leadTimeNotice: 'Pronta entrega',
     options: [
@@ -141,7 +149,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 14.00,
     description: 'Água gaseificada premium, xarope francês Monin, fatias de frutas frescas, hortelã e gelo cristalino.',
     servings: 'Taça 400ml',
-    imageUrl: '/src/assets/images/coffee_cappuccino_gourmet_1791994462535.jpg',
+    imageUrl: imgCoffeeCappuccino,
     leadTimeNotice: 'Pronta entrega',
     options: [
       { name: 'Maçã Verde com Hortelã', priceDelta: 0 },
@@ -158,7 +166,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 185.00,
     description: 'Perfeito para pequenas comemorações inesquecíveis: 1 Mini Bolo Gourmet confeitado (rende 8 a 10 fatias), 20 brigadeiros artesanais sortidos (Belga, Ninho e Churros) e vela palito dourada.',
     servings: 'Serve até 8 pessoas',
-    imageUrl: '/src/assets/images/gift_kit_gourmet_1791994463599.jpg',
+    imageUrl: imgGiftKit,
     featured: true,
     tag: 'Presente & Eventos',
     leadTimeNotice: 'Encomenda com 24h de antecedência',
@@ -175,7 +183,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 68.00,
     description: 'Caixa cartonada de presente com visor transparente, contendo 12 doces gourmet artesanais selecionados: brigadeiro belga noir, ninho com nutella, pistache com chocolate branco e macarons.',
     servings: '12 unidades gourmet',
-    imageUrl: '/src/assets/images/gift_kit_gourmet_1791994463599.jpg',
+    imageUrl: imgGiftKit,
     tag: 'Opção para Presente',
     leadTimeNotice: 'Pronta entrega limitada ou encomenda',
     options: [
@@ -190,7 +198,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 160.00,
     description: 'Caixa em madeira rústica com laço de cetim: 1 Drip Coffee especial, 1 xícara cerâmica exclusiva, 2 croissants amanteigados, 1 fatia de bolo caseiro, geleia de frutas vermelhas artesanal, mini banoffee e cartão personalizado.',
     servings: 'Presente especial para 1 ou 2 pessoas',
-    imageUrl: '/src/assets/images/gift_kit_gourmet_1791994463599.jpg',
+    imageUrl: imgGiftKit,
     tag: 'Edição Especial',
     leadTimeNotice: 'Encomenda com no mínimo 24h de antecedência',
   }
@@ -206,7 +214,8 @@ export const STORE_INFO = {
   mapsUrl: 'https://maps.app.goo.gl/RwEdV6tdfQvna9JF7',
   instagram: '@carol.bolosetortas',
   instagramUrl: 'https://www.instagram.com/carol.bolosetortas',
-  logoUrl: 'https://i.postimg.cc/CxTBbmBT/logo-carol.jpg',
+  logoUrl: '/images/logo-carol.jpg',
+  logoExternalUrl: 'https://i.postimg.cc/CxTBbmBT/logo-carol.jpg',
   pixKey: '34988694394',
   pixName: 'Carol Cafeteria Gourmet Ltda',
   hours: [
@@ -220,27 +229,24 @@ export const STORE_INFO = {
 
 export function isStoreOpenNow(): { isOpen: boolean; statusText: string } {
   const now = new Date();
-  const day = now.getDay(); // 0 = Sunday, 1 = Monday, 2 = Tuesday, etc.
+  const day = now.getDay();
   const hours = now.getHours();
   const minutes = now.getMinutes();
   const currentTime = hours * 60 + minutes;
 
-  // Monday
   if (day === 1) {
     return { isOpen: false, statusText: 'Fechado hoje (Produção artesanal)' };
   }
-  // Sunday
   if (day === 0) {
-    const openTime = 13 * 60; // 13:00
-    const closeTime = 18 * 60; // 18:00
+    const openTime = 13 * 60;
+    const closeTime = 18 * 60;
     if (currentTime >= openTime && currentTime < closeTime) {
       return { isOpen: true, statusText: 'Aberto agora até 18:00' };
     }
     return { isOpen: false, statusText: 'Fechado (Abre domingo às 13:00)' };
   }
-  // Tuesday to Saturday
-  const openTime = 9 * 60; // 09:00
-  const closeTime = 19 * 60; // 19:00
+  const openTime = 9 * 60;
+  const closeTime = 19 * 60;
   if (currentTime >= openTime && currentTime < closeTime) {
     return { isOpen: true, statusText: 'Aberto agora até 19:00' };
   }

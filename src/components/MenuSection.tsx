@@ -17,6 +17,36 @@ const CATEGORIES: { id: CategoryId; label: string; icon: string }[] = [
   { id: 'kits', label: 'Kits & Presentes', icon: '🎁' },
 ];
 
+export const ProductImage: React.FC<{
+  src: string;
+  alt: string;
+  name: string;
+}> = ({ src, alt, name }) => {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return (
+      <div className="w-full h-full flex flex-col items-center justify-center bg-[#FAF4ED] text-[#8C593B] p-4 text-center select-none">
+        <span className="text-3xl mb-1">🍰</span>
+        <span className="font-serif font-semibold text-xs text-[#3A261D] line-clamp-1">
+          {name}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      onError={() => setHasError(true)}
+    />
+  );
+};
+
 export const MenuSection: React.FC<MenuSectionProps> = ({
   onSelectItem,
   onQuickAdd,
@@ -141,22 +171,10 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
               >
                 {/* Image Slot with Fallback Container */}
                 <div className="relative aspect-4/3 overflow-hidden bg-[#F3EDE2]">
-                  <img
+                  <ProductImage
                     src={item.imageUrl}
                     alt={item.name}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    onError={(e) => {
-                      const parent = (e.currentTarget as HTMLElement).parentElement;
-                      if (parent) {
-                        parent.innerHTML = `
-                          <div class="w-full h-full flex flex-col items-center justify-center bg-[#FAF4ED] text-[#8C593B] p-4 text-center">
-                            <span class="text-3xl mb-1">🍰</span>
-                            <span class="font-serif font-semibold text-sm text-[#3A261D]">${item.name}</span>
-                          </div>
-                        `;
-                      }
-                    }}
+                    name={item.name}
                   />
 
                   {/* Clean text tag without pill sandwich */}

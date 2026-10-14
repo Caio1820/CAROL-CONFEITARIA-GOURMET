@@ -58,17 +58,10 @@ export const BioHero: React.FC<BioHeroProps> = ({
               src={STORE_INFO.logoUrl}
               alt="Carol Cafeteria Gourmet"
               className="w-full h-full object-cover rounded-full transition-transform duration-300 group-hover:scale-105"
-              referrerPolicy="no-referrer"
               onError={(e) => {
-                // styled fallback container if image load fails
-                const parent = (e.currentTarget as HTMLElement).parentElement;
-                if (parent) {
-                  parent.innerHTML = `
-                    <div class="w-full h-full rounded-full bg-[#FAF0E6] flex flex-col items-center justify-center text-[#8C593B]">
-                      <span class="font-serif font-bold text-2xl">C</span>
-                      <span class="text-[9px] uppercase tracking-wider font-semibold">Carol</span>
-                    </div>
-                  `;
+                const target = e.currentTarget;
+                if (target.src !== STORE_INFO.logoExternalUrl) {
+                  target.src = STORE_INFO.logoExternalUrl;
                 }
               }}
             />
