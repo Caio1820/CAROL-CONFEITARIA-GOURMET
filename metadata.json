@@ -1,0 +1,6 @@
+{
+  "name": "Carol Cafeteria Gourmet",
+  "description": "BioSite e cardápio digital interativo da Carol Cafeteria Gourmet. Bolos artesanais, tortas confeitadas, cafés especiais e encomendas com envio direto para o WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
